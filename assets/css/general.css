@@ -1,0 +1,181 @@
+/*  ============  Font sizes (px)  ============== 
+
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+ */
+
+:root {
+  --header-height: 8rem;
+  /*  ============  Font weight  ============== */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*  ============  Line height  ============== */
+  --line-default: 1;
+  --line-small: 1.05;
+  --line-medium: 1.2;
+  --line-paragraph: 1.6;
+  --line-large: 1.8;
+
+  /*  ============  Letter spacing  ============== */
+  --letter-spacing-small: -0.5px;
+  --letter-spacing-big: 0.75px;
+
+  /*  ============  Colors  ============== */
+  --color-primary: #17206a;
+  --color-primary-light: #003bb3;
+  --color-primary-darker: #1c2680;
+  --color-secondary: #eff2f8;
+  --color-secondary-dark: #eef2ff;
+  --color-gray: #e7e7e7;
+  --color-gray-light: #f0f0f0;
+  --color-gray-dark: #333;
+  --color-white: #fff;
+  --color-tertiary: #adb6ff;
+
+  /*  ============  Font and Typography  ============== */
+  --body-font: 'Montserrat', sans-serif;
+  --second-font: 'Rubik', sans-serif;
+  --biggest-font-size: 5.6rem;
+  --h1-font-size: 2.4rem;
+  --h2-font-size: 2rem;
+  --h3-font-size: 1.8rem;
+  --normal-font-size: 1.4rem;
+  --small-font-size: 1.3rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--body-font), sans-serif;
+  font-size: var(--normal-font-size);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+.container {
+  max-width: 138rem;
+  margin: 0 auto;
+}
+
+.section {
+  padding-block: 2rem 1.6rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ================= Reusable styles =============== */
+
+/* ================= Reusable news =============== */
+.news {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 1.5rem;
+}
+
+.news > a {
+  grid-column: 1 / 2;
+}
+
+.news__info {
+  grid-column: 2 / 3;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.news__title {
+  max-width: 100%;
+  font-weight: var(--font-semi-bold);
+}
+.news__title__link {
+  transition: color 0.4s;
+}
+.news__title__link:hover {
+  color: #003bb3;
+}
+.news__date {
+  display: flex;
+  column-gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  color: #a9aaac;
+}
+
+/* ================= Reusable heading title =============== */
+
+.heading__title {
+  position: relative;
+  padding-left: 3rem;
+  font-size: var(--h3-font-size);
+}
+.heading__title__link {
+  position: relative;
+}
+
+.heading__title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(45%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.heading__title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: #17206a;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.section__heading {
+  display: flex;
+  justify-content: space-between;
+}
+.section__heading__link {
+  color: var(--color-primary-light);
+  font-weight: var(--font-semi-bold);
+  display: flex;
+  align-items: center;
+  column-gap: 0.6rem;
+}
+.section__heading__link:hover i {
+  transform: translateX(0.3rem);
+  transition: transform 0.4s;
+}
